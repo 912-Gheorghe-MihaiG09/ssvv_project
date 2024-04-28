@@ -1,6 +1,5 @@
 package com.mihaigheorghe;
 
-import com.mihaigheorghe.domain.Student;
 import com.mihaigheorghe.repository.NotaXMLRepository;
 import com.mihaigheorghe.repository.StudentXMLRepository;
 import com.mihaigheorghe.repository.TemaXMLRepository;
@@ -16,7 +15,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class StudentTest
     extends TestCase
 {
     StudentValidator studentValidator = new StudentValidator();
@@ -36,7 +35,7 @@ public class AppTest
      *
      * @param testName name of the test case
      */
-    public AppTest( String testName )
+    public StudentTest(String testName )
     {
         super( testName );
     }
@@ -46,50 +45,7 @@ public class AppTest
      */
     public static Test suite()
     {
-        return new TestSuite( AppTest.class );
-    }
-
-    public void testAddStudent1()
-    {
-        try {
-            service.saveStudent("test_id", "Test Student", 933);
-        } catch (Exception e){
-            fail();
-        }
-        service.deleteStudent("test_id");
-        assertTrue( true );
-    }
-
-    public void testAddStudent2()
-    {
-        try {
-            service.saveStudent("test_id", "Test Student", -933);
-//            service.deleteStudent("test_id");
-            fail();
-        } catch (Exception e){
-            assertTrue( true );
-        }
-    }
-
-    public void testAddTema1()
-    {
-        try {
-            service.saveTema("test_tema", "test_description", 10, 1);
-        } catch (Exception e){
-            fail();
-        }
-        service.deleteTema("test_tema");
-        assertTrue( true );
-    }
-
-    public void testAddTema2()
-    {
-        try {
-            service.saveTema("test_tema", "test_description", 15, 1);
-            fail();
-        } catch (Exception e){
-            assertTrue( true );
-        }
+        return new TestSuite( StudentTest.class );
     }
 
     public void testCase1()
